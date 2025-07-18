@@ -2340,58 +2340,384 @@
             }
         `;
         document.head.appendChild(style);
-        // CARRUSEL DE GANANCIAS
-let currentSlide = 0;
-const totalSlides = 3;
-const track = document.getElementById('carousel-track');
-const indicators = document.querySelectorAll('.indicator');
-const currentSlideElement = document.getElementById('current-slide');
-let autoplayInterval;
+<!-- CARRUSEL DE GANANCIAS -->
+<style>
+/* CARRUSEL NEGRO - 6 IMÁGENES INDIVIDUALES */
+.earnings-carousel {
+    position: relative;
+    max-width: 900px;
+    margin: 20px auto;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(34, 197, 94, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(15px);
+    overflow: visible !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
 
-function goToSlide(slideIndex) {
-    currentSlide = slideIndex;
-    const translateX = -(slideIndex * 100);
-    track.style.transform = `translateX(${translateX}%)`;
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+    padding: 10px;
+}
+
+.carousel-slide {
+    min-width: calc(50% - 10px);
+    flex-shrink: 0;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid rgba(34, 197, 94, 0.4);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.2);
+}
+
+.carousel-slide img:hover {
+    transform: scale(1.02);
+    border-color: rgba(34, 197, 94, 0.6);
+    box-shadow: 0 12px 35px rgba(34, 197, 94, 0.3);
+}
+
+/* FLECHAS CON Z-INDEX MUY ALTO */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(45deg, #22c55e, #16a34a);
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    z-index: 9999 !important;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto !important;
+}
+
+.carousel-nav:hover {
+    background: linear-gradient(45deg, #16a34a, #15803d);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+}
+
+.carousel-nav:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-prev { 
+    left: -30px; 
+}
+
+.carousel-next { 
+    right: -30px; 
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.indicator.active {
+    background: #22c55e;
+    transform: scale(1.3);
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+}
+
+.indicator:hover {
+    background: rgba(34, 197, 94, 0.6);
+    transform: scale(1.1);
+}
+
+.carousel-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #22c55e;
+    font-size: 1.4rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carousel-counter {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba(34, 197, 94, 0.9);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.autoplay-indicator {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    background: rgba(251, 191, 36, 0.9);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.autoplay-dot {
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@media (max-width: 768px) {
+    .carousel-slide { 
+        min-width: 100%; 
+    }
+    .carousel-slide img { 
+        height: 300px; 
+    }
+    .carousel-nav { 
+        width: 50px; 
+        height: 50px; 
+        font-size: 1.5rem; 
+    }
+    .carousel-prev { 
+        left: -25px; 
+    }
+    .carousel-next { 
+        right: -25px; 
+    }
+    .earnings-carousel {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+}
+</style>
+
+<div class="earnings-carousel">
+    <div class="carousel-title">
+        💰 Mis Resultados Reales en Ganancias
+    </div>
     
-    indicators.forEach((indicator, index) => {
-        indicator.classList.toggle('active', index === slideIndex);
+    <div class="autoplay-indicator">
+        <div class="autoplay-dot"></div>
+        Auto
+    </div>
+    
+    <div class="carousel-counter">
+        <span id="current-slide-count">1</span> / <span id="total-slides-count">6</span>
+    </div>
+    
+    <div class="carousel-container">
+        <div class="carousel-track" id="earnings-track">
+            <div class="carousel-slide">
+                <img src="ganancias1.jpeg" alt="Ganancia 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="ganancias2.jpeg" alt="Ganancia 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="ganancias3.jpeg" alt="Ganancia 3">
+            </div>
+            <div class="carousel-slide">
+                <img src="ganancias4.jpeg" alt="Ganancia 4">
+            </div>
+            <div class="carousel-slide">
+                <img src="ganancias5.jpeg" alt="Ganancia 5">
+            </div>
+            <div class="carousel-slide">
+                <img src="ganancias6.jpeg" alt="Ganancia 6">
+            </div>
+        </div>
+        
+        <button class="carousel-nav carousel-prev" id="prev-arrow">‹</button>
+        <button class="carousel-nav carousel-next" id="next-arrow">›</button>
+    </div>
+    
+    <div class="carousel-indicators" id="indicators-container">
+        <button class="indicator active" data-slide="0"></button>
+        <button class="indicator" data-slide="1"></button>
+        <button class="indicator" data-slide="2"></button>
+        <button class="indicator" data-slide="3"></button>
+        <button class="indicator" data-slide="4"></button>
+        <button class="indicator" data-slide="5"></button>
+    </div>
+</div>
+
+<script>
+// CARRUSEL 6 IMÁGENES - NEGRO Y FUNCIONAL
+(function() {
+    let currentIndex = 0;
+    const totalSlides = 6;
+    const track = document.getElementById('earnings-track');
+    const indicators = document.querySelectorAll('#indicators-container .indicator');
+    const currentCount = document.getElementById('current-slide-count');
+    const totalCount = document.getElementById('total-slides-count');
+    const prevArrow = document.getElementById('prev-arrow');
+    const nextArrow = document.getElementById('next-arrow');
+    let autoTimer;
+
+    // Verificar elementos
+    if (!track || !prevArrow || !nextArrow) {
+        console.log('Elementos del carrusel no encontrados');
+        return;
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        
+        // Calcular transformación para mostrar 2 imágenes
+        let translateValue;
+        if (index === 0) translateValue = 0;
+        else if (index === 1) translateValue = -25;
+        else if (index === 2) translateValue = -50;
+        else if (index === 3) translateValue = -75;
+        else if (index === 4) translateValue = -100;
+        else if (index === 5) translateValue = -125;
+        
+        track.style.transform = `translateX(${translateValue}%)`;
+        
+        // Actualizar indicadores
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+        
+        // Actualizar contador
+        if (currentCount) {
+            currentCount.textContent = index + 1;
+        }
+        
+        restartAuto();
+    }
+
+    function nextSlide() {
+        const next = (currentIndex + 1) % totalSlides;
+        goToSlide(next);
+    }
+
+    function prevSlide() {
+        const prev = (currentIndex - 1 + totalSlides) % totalSlides;
+        goToSlide(prev);
+    }
+
+    function startAuto() {
+        autoTimer = setInterval(nextSlide, 4000);
+    }
+
+    function restartAuto() {
+        clearInterval(autoTimer);
+        startAuto();
+    }
+
+    // EVENTOS DE LAS FLECHAS
+    prevArrow.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        prevSlide();
+        console.log('Flecha anterior clickeada');
     });
-    
-    currentSlideElement.textContent = slideIndex + 1;
-    resetAutoplay();
-}
 
-function nextSlide() {
-    const nextSlideIndex = (currentSlide + 1) % totalSlides;
-    goToSlide(nextSlideIndex);
-}
+    nextArrow.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        nextSlide();
+        console.log('Flecha siguiente clickeada');
+    });
 
-function prevSlide() {
-    const prevSlideIndex = (currentSlide - 1 + totalSlides) % totalSlides;
-    goToSlide(prevSlideIndex);
-}
+    // Eventos de indicadores
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', function(e) {
+            e.preventDefault();
+            goToSlide(index);
+        });
+    });
 
-function startAutoplay() {
-    autoplayInterval = setInterval(nextSlide, 4000);
-}
-
-function resetAutoplay() {
-    clearInterval(autoplayInterval);
-    startAutoplay();
-}
-
-// Inicializar carrusel
-if (document.getElementById('carousel-track')) {
-    startAutoplay();
-    document.getElementById('total-slides').textContent = totalSlides;
-    
     // Pausar al hacer hover
     const carousel = document.querySelector('.earnings-carousel');
     if (carousel) {
-        carousel.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
-        carousel.addEventListener('mouseleave', startAutoplay);
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoTimer);
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+            startAuto();
+        });
     }
-}
+
+    // Teclado
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
+
+    // Touch/Swipe
+    let startX = 0;
+    track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    track.addEventListener('touchend', (e) => {
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+        
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) nextSlide();
+            else prevSlide();
+        }
+    });
+
+    // Inicializar
+    if (totalCount) totalCount.textContent = totalSlides;
+    startAuto();
+
+    console.log('Carrusel de 6 imágenes inicializado');
+})();
+</script>
     </script>
 </body>
 </html>
