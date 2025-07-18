@@ -2052,86 +2052,69 @@
         });
         
         // Form submission with WhatsApp integration and email
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Submit to Formspree (email)
-            fetch(this.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    // Create WhatsApp message
-                    const whatsappMessage = `¡Hola! Me interesa el sistema de afiliados de Scylla.
-                    
-📝 Mis datos:
-• Nombre: ${data.fullName}
-• Email: ${data.email}
-• Teléfono: ${data.phone}
-• País: ${data.country}
-• Experiencia: ${data.experience || 'No especificada'}
-• Opción de interés: ${data.investment || 'Por definir'}
-${data.message ? `• Mensaje: ${data.message}` : ''}
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    
+    // Submit to Formspree (email)
+    fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            // Show success message
+            showSuccessMessage();
+            this.reset();
+        } else {
+            alert('Hubo un problema al enviar el formulario. Por favor, intenta de nuevo.');
+        }
+    }).catch(error => {
+        alert('Error al enviar el formulario. Por favor, intenta de nuevo.');
+    });
+});
 
-¿Podrían contactarme para obtener más información?`;
+function showSuccessMessage() {
+    const successDiv = document.createElement('div');
+    successDiv.innerHTML = `
+        <div style="
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(34, 197, 94, 0.3);
+            z-index: 10000;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            backdrop-filter: blur(15px);
+        ">
+            <div style="font-size: 3rem; margin-bottom: 15px;">✅</div>
+            <h3 style="margin-bottom: 15px;">¡Mensaje enviado con éxito!</h3>
+            <p style="margin-bottom: 20px;">Tu información ha sido enviada correctamente. Nos pondremos en contacto contigo muy pronto.</p>
+            <button onclick="this.parentElement.parentElement.remove()" style="
+                background: rgba(255, 255, 255, 0.2);
+                border: none;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: bold;
+            ">Cerrar</button>
+        </div>
+    `;
+    document.body.appendChild(successDiv);
+}
 
-                    // Open WhatsApp with the message
-                    const whatsappUrl = `https://wa.link/6xy2y0?text=${encodeURIComponent(whatsappMessage)}`;
-                    window.open(whatsappUrl, '_blank');
-                    
-                    // Show success message
-                    showSuccessMessage();
-                    this.reset();
-                } else {
-                    alert('Hubo un problema al enviar el formulario. Por favor, intenta de nuevo.');
-                }
-            }).catch(error => {
-                alert('Error al enviar el formulario. Por favor, intenta de nuevo.');
-            });
-        });
-
-        function showSuccessMessage() {
-            const successDiv = document.createElement('div');
-            successDiv.innerHTML = `
-                <div style="
-                    position: fixed;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    background: linear-gradient(45deg, #22c55e, #16a34a);
-                    color: white;
-                    padding: 30px;
-                    border-radius: 15px;
-                    box-shadow: 0 20px 40px rgba(34, 197, 94, 0.3);
-                    z-index: 10000;
-                    text-align: center;
-                    max-width: 400px;
-                    width: 90%;
-                    backdrop-filter: blur(15px);
-                ">
-                    <div style="font-size: 3rem; margin-bottom: 15px;">✅</div>
-                    <h3 style="margin-bottom: 15px;">¡Solicitud Enviada!</h3>
-                    <p style="margin-bottom: 20px;">Tu información ha sido enviada por email y te hemos redirigido a WhatsApp. Nos pondremos en contacto contigo muy pronto.</p>
-                    <button onclick="this.parentElement.parentElement.remove()" style="
-                        background: rgba(255, 255, 255, 0.2);
-                        border: none;
-                        color: white;
-                        padding: 10px 20px;
-                        border-radius: 5px;
-                        cursor: pointer;
-                        font-weight: bold;
-                    ">Cerrar</button>
-                </div>
-            `;
-            document.body.appendChild(successDiv);
-            
             // Auto remove after 5 seconds
             setTimeout(() => {
                 if (successDiv.parentElement) {
