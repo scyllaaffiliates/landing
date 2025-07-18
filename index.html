@@ -2018,28 +2018,7 @@
 
     <script>
         // Video placeholder functionality
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Evita que se envíe de forma tradicional
-
-    const form = e.target;
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-    }).then(response => {
-        if (response.ok) {
-            // Mostrar mensaje de éxito
-            document.getElementById('successMessage').style.display = 'block';
-            form.reset(); // Limpiar formulario
-        } else {
-            alert('Hubo un error al enviar el formulario.');
-        }
-    }).catch(error => {
-        alert('Error al enviar el formulario.');
-    });
-});
+        
         function playVideo() {
             alert('🎬 REEMPLAZAR ESTE CÓDIGO\n\n💡 Instrucciones:\n1. Sube tu video a YouTube\n2. Obtén el código embed\n3. Reemplaza todo el div "video-placeholder" con:\n\n<iframe width="100%" height="400" src="https://www.youtube.com/embed/TU_VIDEO_ID" frameborder="0" allowfullscreen style="border-radius: 15px;"></iframe>');
         }
