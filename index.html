@@ -2005,19 +2005,18 @@
 
     <script>
         // Video placeholder functionality
-        
         function playVideo() {
             alert('🎬 REEMPLAZAR ESTE CÓDIGO\n\n💡 Instrucciones:\n1. Sube tu video a YouTube\n2. Obtén el código embed\n3. Reemplaza todo el div "video-placeholder" con:\n\n<iframe width="100%" height="400" src="https://www.youtube.com/embed/TU_VIDEO_ID" frameborder="0" allowfullscreen style="border-radius: 15px;"></iframe>');
         }
 
-        // FAQ Functionality
+        // FAQ Functionality - VERSIÓN CORREGIDA Y FUNCIONAL
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', function() {
                 const faqItem = this.parentElement;
                 const answer = this.nextElementSibling;
                 const icon = this.querySelector('.faq-icon');
                 
-                // Close all other FAQs
+                // Cerrar todos los otros FAQs
                 document.querySelectorAll('.faq-item').forEach(item => {
                     if (item !== faqItem) {
                         item.classList.remove('active');
@@ -2026,7 +2025,7 @@
                     }
                 });
                 
-                // Toggle current FAQ
+                // Toggle el FAQ actual
                 if (faqItem.classList.contains('active')) {
                     faqItem.classList.remove('active');
                     answer.style.display = 'none';
@@ -2040,68 +2039,67 @@
         });
         
         // Form submission with WhatsApp integration and email
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData);
-    
-    // Submit to Formspree (email)
-    fetch(this.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
-    }).then(response => {
-        if (response.ok) {
-            // Show success message
-            showSuccessMessage();
-            this.reset();
-        } else {
-            alert('Hubo un problema al enviar el formulario. Por favor, intenta de nuevo.');
-        }
-    }).catch(error => {
-        alert('Error al enviar el formulario. Por favor, intenta de nuevo.');
-    });
-});
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Submit to Formspree (email)
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Show success message
+                    showSuccessMessage();
+                    this.reset();
+                } else {
+                    alert('Hubo un problema al enviar el formulario. Por favor, intenta de nuevo.');
+                }
+            }).catch(error => {
+                alert('Error al enviar el formulario. Por favor, intenta de nuevo.');
+            });
+        });
 
-function showSuccessMessage() {
-    const successDiv = document.createElement('div');
-    successDiv.innerHTML = `
-        <div style="
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: linear-gradient(45deg, #22c55e, #16a34a);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(34, 197, 94, 0.3);
-            z-index: 10000;
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-            backdrop-filter: blur(15px);
-        ">
-            <div style="font-size: 3rem; margin-bottom: 15px;">✅</div>
-            <h3 style="margin-bottom: 15px;">¡Mensaje enviado con éxito!</h3>
-            <p style="margin-bottom: 20px;">Tu información ha sido enviada correctamente. Nos pondremos en contacto contigo muy pronto.</p>
-            <button onclick="this.parentElement.parentElement.remove()" style="
-                background: rgba(255, 255, 255, 0.2);
-                border: none;
-                color: white;
-                padding: 10px 20px;
-                border-radius: 5px;
-                cursor: pointer;
-                font-weight: bold;
-            ">Cerrar</button>
-        </div>
-    `;
-    document.body.appendChild(successDiv);
-}
+        function showSuccessMessage() {
+            const successDiv = document.createElement('div');
+            successDiv.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: linear-gradient(45deg, #22c55e, #16a34a);
+                    color: white;
+                    padding: 30px;
+                    border-radius: 15px;
+                    box-shadow: 0 20px 40px rgba(34, 197, 94, 0.3);
+                    z-index: 10000;
+                    text-align: center;
+                    max-width: 400px;
+                    width: 90%;
+                    backdrop-filter: blur(15px);
+                ">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">✅</div>
+                    <h3 style="margin-bottom: 15px;">¡Mensaje enviado con éxito!</h3>
+                    <p style="margin-bottom: 20px;">Tu información ha sido enviada correctamente. Nos pondremos en contacto contigo muy pronto.</p>
+                    <button onclick="this.parentElement.parentElement.remove()" style="
+                        background: rgba(255, 255, 255, 0.2);
+                        border: none;
+                        color: white;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-weight: bold;
+                    ">Cerrar</button>
+                </div>
+            `;
+            document.body.appendChild(successDiv);
 
             // Auto remove after 5 seconds
             setTimeout(() => {
