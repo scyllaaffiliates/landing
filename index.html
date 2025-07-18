@@ -67,23 +67,6 @@
             z-index: 2;
         }
 
-        .urgency-badge {
-            background: linear-gradient(45deg, #dc2626, #b91c1c);
-            color: white;
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 30px;
-            display: inline-block;
-            animation: blink 1.5s infinite;
-        }
-
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0.7; }
-        }
-
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
@@ -529,6 +512,240 @@
             font-size: 0.9rem;
         }
 
+        /* Tabla Antes vs Después */
+        .comparison-section {
+            background: rgba(15, 15, 15, 0.6);
+        }
+
+        .comparison-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .before-column, .after-column {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(15px);
+            position: relative;
+        }
+
+        .before-column {
+            border: 2px solid rgba(220, 38, 38, 0.4);
+        }
+
+        .after-column {
+            border: 2px solid rgba(34, 197, 94, 0.4);
+        }
+
+        .comparison-header {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .before-column .comparison-header {
+            color: #dc2626;
+        }
+
+        .after-column .comparison-header {
+            color: #22c55e;
+        }
+
+        .comparison-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .before-column .comparison-item {
+            background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+        }
+
+        .after-column .comparison-item {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .comparison-item:hover {
+            transform: translateX(5px);
+        }
+
+        .comparison-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .comparison-text {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        /* Sección de Planes */
+        .plans-section {
+            background: rgba(34, 197, 94, 0.05);
+        }
+
+        .free-plan-container {
+            max-width: 400px;
+            margin: 0 auto 60px;
+        }
+
+        .paid-plans-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .plan-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: visible;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            min-height: 600px;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(34, 197, 94, 0.6);
+            box-shadow: 0 20px 40px rgba(34, 197, 94, 0.2);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .most-sold {
+            background: linear-gradient(45deg, #fbbf24, #f59e0b);
+            color: #000;
+        }
+
+        .most-recommended {
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+        }
+
+        .plan-title {
+            font-size: 1.8rem;
+            color: #22c55e;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+
+        .plan-price-period {
+            font-size: 1rem;
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .plan-features li {
+            padding: 10px 0;
+            font-size: 1rem;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-align: left;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            color: #22c55e;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .plan-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: auto;
+        }
+
+        .plan-btn:hover {
+            background: linear-gradient(45deg, #16a34a, #15803d);
+            transform: translateY(-2px);
+        }
+
+        .plan-divider {
+            text-align: center;
+            margin: 60px 0 40px;
+            position: relative;
+        }
+
+        .plan-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.3), transparent);
+        }
+
+        .plan-divider-text {
+            background: #1a1a1a;
+            padding: 0 30px;
+            color: #22c55e;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+
         /* FAQ Section */
         .faq-section {
             background: rgba(34, 197, 94, 0.05);
@@ -589,6 +806,61 @@
 
         .faq-item.active .faq-icon {
             transform: rotate(45deg);
+        }
+
+        /* Comisiones actualizadas */
+        .commission-section {
+            background: radial-gradient(circle at 30% 70%, rgba(34, 197, 94, 0.1) 0%, transparent 70%);
+        }
+
+        .commission-table {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            border-radius: 20px;
+            padding: 0;
+            backdrop-filter: blur(15px);
+            overflow: hidden;
+            margin: 0 auto 40px;
+            max-width: 800px;
+        }
+
+        .commission-header {
+            background: rgba(34, 197, 94, 0.1);
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            font-weight: bold;
+            border-bottom: 2px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .commission-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            border-bottom: 1px solid rgba(34, 197, 94, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .commission-row:hover {
+            background: rgba(34, 197, 94, 0.05);
+        }
+
+        .commission-row:last-child {
+            border-bottom: none;
+        }
+
+        .commission-tier {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .commission-amount {
+            font-size: 1.3rem;
+            color: #fbbf24;
+            font-weight: bold;
+            text-align: right;
         }
 
         /* Contact Form */
@@ -800,251 +1072,6 @@
             border-top: 1px solid rgba(34, 197, 94, 0.3);
         }
 
-        /* Tabla Antes vs Después */
-        .comparison-section {
-            background: rgba(15, 15, 15, 0.6);
-        }
-
-        .comparison-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .before-column, .after-column {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 40px;
-            backdrop-filter: blur(15px);
-            position: relative;
-        }
-
-        .before-column {
-            border: 2px solid rgba(220, 38, 38, 0.4);
-        }
-
-        .after-column {
-            border: 2px solid rgba(34, 197, 94, 0.4);
-        }
-
-        .comparison-header {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.8rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .before-column .comparison-header {
-            color: #dc2626;
-        }
-
-        .after-column .comparison-header {
-            color: #22c55e;
-        }
-
-        .comparison-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .before-column .comparison-item {
-            background: rgba(220, 38, 38, 0.1);
-            border: 1px solid rgba(220, 38, 38, 0.2);
-        }
-
-        .after-column .comparison-item {
-            background: rgba(34, 197, 94, 0.1);
-            border: 1px solid rgba(34, 197, 94, 0.2);
-        }
-
-        .comparison-item:hover {
-            transform: translateX(5px);
-        }
-
-        .comparison-icon {
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .comparison-text {
-            font-size: 1rem;
-            line-height: 1.4;
-        }
-
-        /* Sección de Planes */
-        .plans-section {
-            background: rgba(34, 197, 94, 0.05);
-        }
-
-        .plans-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .plan-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(34, 197, 94, 0.3);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            backdrop-filter: blur(15px);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: visible;
-        }
-
-        .plan-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(34, 197, 94, 0.6);
-            box-shadow: 0 20px 40px rgba(34, 197, 94, 0.2);
-        }
-
-        .plan-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            color: white;
-        }
-
-        .most-sold {
-            background: linear-gradient(45deg, #fbbf24, #f59e0b);
-            color: #000;
-        }
-
-        .most-recommended {
-            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
-        }
-
-        .plan-title {
-            font-size: 1.8rem;
-            color: #22c55e;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .plan-price {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #fbbf24;
-            margin-bottom: 10px;
-        }
-
-        .plan-price-period {
-            font-size: 1rem;
-            opacity: 0.7;
-            margin-bottom: 30px;
-        }
-
-        .plan-features {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 30px;
-        }
-
-        .plan-features li {
-            padding: 10px 0;
-            font-size: 1rem;
-            opacity: 0.9;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .plan-features li::before {
-            content: '✓';
-            color: #22c55e;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .plan-btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(45deg, #22c55e, #16a34a);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            display: inline-block;
-        }
-
-        .plan-btn:hover {
-            background: linear-gradient(45deg, #16a34a, #15803d);
-            transform: translateY(-2px);
-        }
-
-        /* Comisiones actualizadas */
-        .commission-table {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(34, 197, 94, 0.3);
-            border-radius: 20px;
-            padding: 0;
-            backdrop-filter: blur(15px);
-            overflow: hidden;
-            margin: 0 auto 40px;
-            max-width: 800px;
-        }
-
-        .commission-header {
-            background: rgba(34, 197, 94, 0.1);
-            padding: 20px;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 20px;
-            font-weight: bold;
-            border-bottom: 2px solid rgba(34, 197, 94, 0.3);
-        }
-
-        .commission-row {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 20px;
-            padding: 20px;
-            border-bottom: 1px solid rgba(34, 197, 94, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .commission-row:hover {
-            background: rgba(34, 197, 94, 0.05);
-        }
-
-        .commission-row:last-child {
-            border-bottom: none;
-        }
-
-        .commission-tier {
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        .commission-amount {
-            font-size: 1.3rem;
-            color: #fbbf24;
-            font-weight: bold;
-            text-align: right;
-        }
-
         /* Icon Placeholder Styles */
         .icon-placeholder {
             width: 24px;
@@ -1069,6 +1096,20 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 900px) {
+            .paid-plans-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .paid-plans-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -1117,13 +1158,18 @@
                 gap: 30px;
             }
 
-            .plans-grid {
+            .paid-plans-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
 
             .plan-card {
                 padding: 30px 20px;
+                min-height: auto;
+            }
+
+            .plan-price {
+                font-size: 2.5rem;
             }
 
             .commission-header,
@@ -1495,13 +1541,13 @@
 
     <section class="content-section plans-section">
         <div class="container">
-            <h2 class="section-title fade-in">Nuestros 4 Planes</h2>
+            <h2 class="section-title fade-in">Nuestros Planes</h2>
             <div class="section-subtitle fade-in">
                 Elige el plan que mejor se adapte a tu presupuesto y objetivos
             </div>
 
-            <div class="plans-grid">
-                <!-- PLAN GRATIS -->
+            <!-- PLAN GRATIS SEPARADO -->
+            <div class="free-plan-container">
                 <div class="plan-card fade-in">
                     <div class="plan-title">Plan Gratis</div>
                     <div class="plan-price">$0</div>
@@ -1512,13 +1558,22 @@
                         <li>Soporte por email</li>
                         <li>Manual básico incluido</li>
                         <li>Sin límite de referidos</li>
+                        <li>Empieza inmediatamente</li>
                     </ul>
                     <!-- REEMPLAZAR CON TU ENLACE DE REGISTRO GRATIS -->
                     <a href="https://checkout.stripe.com/gratis" target="_blank" class="plan-btn">
                         COMENZAR GRATIS
                     </a>
                 </div>
+            </div>
 
+            <!-- DIVISOR -->
+            <div class="plan-divider">
+                <div class="plan-divider-text">PLANES PREMIUM</div>
+            </div>
+
+            <!-- PLANES DE PAGO EN GRID -->
+            <div class="paid-plans-grid">
                 <!-- PLAN $200 - MÁS VENDIDO -->
                 <div class="plan-card fade-in">
                     <div class="plan-badge most-sold">MÁS VENDIDO</div>
@@ -1532,6 +1587,7 @@
                         <li>Guías avanzadas</li>
                         <li>Webinars exclusivos</li>
                         <li>Plantillas de marketing</li>
+                        <li>Acceso a grupo privado</li>
                     </ul>
                     <!-- REEMPLAZAR CON TU PASARELA DE PAGO $200 -->
                     <a href="https://checkout.stripe.com/plan-200" target="_blank" class="plan-btn">
@@ -1582,6 +1638,87 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="content-section commission-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Estructura de Comisiones</h2>
+            <div class="section-subtitle fade-in">
+                Gana más dinero mientras más depósitos generes - Sin límites
+            </div>
+
+            <div class="commission-table fade-in">
+                <div class="commission-header">
+                    <div>
+                        <span class="icon-placeholder" data-icon="💰"></span>
+                        Monto Depositado por Referido
+                    </div>
+                    <div>
+                        <span class="icon-placeholder" data-icon="💸"></span>
+                        Tu Comisión
+                    </div>
+                </div>
+                
+                <div class="commission-row">
+                    <div class="commission-tier">
+                        <span class="icon-placeholder" data-icon="🥉"></span>
+                        De $1 a $49 depositados
+                    </div>
+                    <div class="commission-amount">$50</div>
+                </div>
+                
+                <div class="commission-row">
+                    <div class="commission-tier">
+                        <span class="icon-placeholder" data-icon="🥈"></span>
+                        De $50 a $149 depositados
+                    </div>
+                    <div class="commission-amount">$100</div>
+                </div>
+                
+                <div class="commission-row">
+                    <div class="commission-tier">
+                        <span class="icon-placeholder" data-icon="🥇"></span>
+                        De $150 a $249 depositados
+                    </div>
+                    <div class="commission-amount">$150</div>
+                </div>
+                
+                <div class="commission-row">
+                    <div class="commission-tier">
+                        <span class="icon-placeholder" data-icon="💎"></span>
+                        De $250 a $499 depositados
+                    </div>
+                    <div class="commission-amount">$300</div>
+                </div>
+                
+                <div class="commission-row">
+                    <div class="commission-tier">
+                        <span class="icon-placeholder" data-icon="👑"></span>
+                        $500+ depositados
+                    </div>
+                    <div class="commission-amount">$400</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <div style="background: rgba(34, 197, 94, 0.1); border: 2px solid rgba(34, 197, 94, 0.3); border-radius: 15px; padding: 30px; max-width: 600px; margin: 0 auto;">
+                    <h3 style="color: #22c55e; margin-bottom: 15px;">
+                        <span class="icon-placeholder" data-icon="🎯"></span>
+                        Ejemplo de Ganancias
+                    </h3>
+                    <p style="font-size: 1.1rem; opacity: 0.9;">
+                        Si refieres 10 personas que depositan $500 cada una, ganarás <strong style="color: #fbbf24;">$400 × 10 = $4,000 USD</strong> en comisiones totales.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="content-section faq-section">
         <div class="container">
             <h2 class="section-title fade-in">Preguntas Frecuentes</h2>
             <div class="section-subtitle fade-in">
@@ -1637,7 +1774,7 @@
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Puedes ganar desde $1 hasta $400 por cada persona que invites, dependiendo del nivel de depósito que realicen y tu tier de comisiones. No hay límite en la cantidad de referidos que puedes tener.
+                        Puedes ganar desde $50 hasta $400 por cada persona que invites, dependiendo del monto que depositen. No hay límite en la cantidad de referidos que puedes tener.
                     </div>
                 </div>
                 
