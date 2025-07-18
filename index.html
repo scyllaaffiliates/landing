@@ -800,6 +800,251 @@
             border-top: 1px solid rgba(34, 197, 94, 0.3);
         }
 
+        /* Tabla Antes vs Después */
+        .comparison-section {
+            background: rgba(15, 15, 15, 0.6);
+        }
+
+        .comparison-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .before-column, .after-column {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(15px);
+            position: relative;
+        }
+
+        .before-column {
+            border: 2px solid rgba(220, 38, 38, 0.4);
+        }
+
+        .after-column {
+            border: 2px solid rgba(34, 197, 94, 0.4);
+        }
+
+        .comparison-header {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .before-column .comparison-header {
+            color: #dc2626;
+        }
+
+        .after-column .comparison-header {
+            color: #22c55e;
+        }
+
+        .comparison-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .before-column .comparison-item {
+            background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+        }
+
+        .after-column .comparison-item {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .comparison-item:hover {
+            transform: translateX(5px);
+        }
+
+        .comparison-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .comparison-text {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        /* Sección de Planes */
+        .plans-section {
+            background: rgba(34, 197, 94, 0.05);
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .plan-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: visible;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(34, 197, 94, 0.6);
+            box-shadow: 0 20px 40px rgba(34, 197, 94, 0.2);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .most-sold {
+            background: linear-gradient(45deg, #fbbf24, #f59e0b);
+            color: #000;
+        }
+
+        .most-recommended {
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+        }
+
+        .plan-title {
+            font-size: 1.8rem;
+            color: #22c55e;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+
+        .plan-price-period {
+            font-size: 1rem;
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .plan-features li {
+            padding: 10px 0;
+            font-size: 1rem;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            color: #22c55e;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .plan-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .plan-btn:hover {
+            background: linear-gradient(45deg, #16a34a, #15803d);
+            transform: translateY(-2px);
+        }
+
+        /* Comisiones actualizadas */
+        .commission-table {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            border-radius: 20px;
+            padding: 0;
+            backdrop-filter: blur(15px);
+            overflow: hidden;
+            margin: 0 auto 40px;
+            max-width: 800px;
+        }
+
+        .commission-header {
+            background: rgba(34, 197, 94, 0.1);
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            font-weight: bold;
+            border-bottom: 2px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .commission-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            border-bottom: 1px solid rgba(34, 197, 94, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .commission-row:hover {
+            background: rgba(34, 197, 94, 0.05);
+        }
+
+        .commission-row:last-child {
+            border-bottom: none;
+        }
+
+        .commission-tier {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .commission-amount {
+            font-size: 1.3rem;
+            color: #fbbf24;
+            font-weight: bold;
+            text-align: right;
+        }
+
         /* Icon Placeholder Styles */
         .icon-placeholder {
             width: 24px;
@@ -866,6 +1111,31 @@
             .video-placeholder {
                 height: 250px;
             }
+
+            .comparison-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .plans-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .plan-card {
+                padding: 30px 20px;
+            }
+
+            .commission-header,
+            .commission-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .commission-amount {
+                text-align: center;
+            }
         }
 
         /* Animations */
@@ -913,11 +1183,6 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content fade-in">
-                <div class="urgency-badge">
-                    <span class="icon-placeholder" data-icon="🔥"></span>
-                    OFERTA LIMITADA - SOLO 48 HORAS
-                </div>
-                
                 <h1>Gana hasta $400 por cada persona inscrita</h1>
                 <h2>Empieza a generar ingresos en dólares refiriendo amigos</h2>
                 
@@ -1101,7 +1366,222 @@
 
     <div class="section-divider"></div>
 
-    <section class="content-section faq-section">
+    <section class="content-section comparison-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Mi Transformación Real</h2>
+            <div class="section-subtitle fade-in">
+                Antes vs Después - La diferencia de tomar acción
+            </div>
+
+            <div class="comparison-container">
+                <div class="before-column slide-in-left">
+                    <div class="comparison-header">
+                        <span>❌</span>
+                        ANTES - Era un fracaso
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">😴</div>
+                        <div class="comparison-text">Me levantaba a las 12 del mediodía sin propósito</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">🍺</div>
+                        <div class="comparison-text">Vivía lleno de vicios y malos hábitos</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">📱</div>
+                        <div class="comparison-text">Perdía horas en redes sociales sin productividad</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">💸</div>
+                        <div class="comparison-text">Gastaba dinero en cosas innecesarias</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">😞</div>
+                        <div class="comparison-text">No tenía metas claras ni visión de futuro</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">🏠</div>
+                        <div class="comparison-text">Era desordenado y perezoso en todo</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">🚫</div>
+                        <div class="comparison-text">Rechazaba oportunidades por miedo al cambio</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">👥</div>
+                        <div class="comparison-text">Me rodeaba de personas con mentalidad limitada</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">📉</div>
+                        <div class="comparison-text">Ingresos bajos e inestables</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">😡</div>
+                        <div class="comparison-text">Culpaba a otros de mi falta de éxito</div>
+                    </div>
+                </div>
+
+                <div class="after-column slide-in-right">
+                    <div class="comparison-header">
+                        <span>✅</span>
+                        AHORA - Soy exitoso
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">⏰</div>
+                        <div class="comparison-text">Me levanto temprano con energía y propósito</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">💪</div>
+                        <div class="comparison-text">Vivo disciplinado y enfocado en mis metas</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">📚</div>
+                        <div class="comparison-text">Invierto tiempo en aprender y crecer constantemente</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">💰</div>
+                        <div class="comparison-text">Genero más de $10,000 USD mensuales</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">🎯</div>
+                        <div class="comparison-text">Tengo objetivos claros y los cumplo sistemáticamente</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">🏆</div>
+                        <div class="comparison-text">Soy organizado y eficiente en todo lo que hago</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">🚀</div>
+                        <div class="comparison-text">Abrazo oportunidades y tomo riesgos calculados</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">👑</div>
+                        <div class="comparison-text">Me rodeo de personas exitosas y mentores</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">📈</div>
+                        <div class="comparison-text">Ingresos escalables y múltiples fuentes de ingreso</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">🔥</div>
+                        <div class="comparison-text">Asumo responsabilidad total de mi éxito</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="content-section plans-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Nuestros 4 Planes</h2>
+            <div class="section-subtitle fade-in">
+                Elige el plan que mejor se adapte a tu presupuesto y objetivos
+            </div>
+
+            <div class="plans-grid">
+                <!-- PLAN GRATIS -->
+                <div class="plan-card fade-in">
+                    <div class="plan-title">Plan Gratis</div>
+                    <div class="plan-price">$0</div>
+                    <div class="plan-price-period">Sin costo inicial</div>
+                    <ul class="plan-features">
+                        <li>Acceso básico al sistema</li>
+                        <li>Comisiones del 30% por venta</li>
+                        <li>Soporte por email</li>
+                        <li>Manual básico incluido</li>
+                        <li>Sin límite de referidos</li>
+                    </ul>
+                    <!-- REEMPLAZAR CON TU ENLACE DE REGISTRO GRATIS -->
+                    <a href="https://checkout.stripe.com/gratis" target="_blank" class="plan-btn">
+                        COMENZAR GRATIS
+                    </a>
+                </div>
+
+                <!-- PLAN $200 - MÁS VENDIDO -->
+                <div class="plan-card fade-in">
+                    <div class="plan-badge most-sold">MÁS VENDIDO</div>
+                    <div class="plan-title">Plan Básico</div>
+                    <div class="plan-price">$200</div>
+                    <div class="plan-price-period">Pago único</div>
+                    <ul class="plan-features">
+                        <li>Todo del plan gratis</li>
+                        <li>Herramientas profesionales</li>
+                        <li>Soporte prioritario</li>
+                        <li>Guías avanzadas</li>
+                        <li>Webinars exclusivos</li>
+                        <li>Plantillas de marketing</li>
+                    </ul>
+                    <!-- REEMPLAZAR CON TU PASARELA DE PAGO $200 -->
+                    <a href="https://checkout.stripe.com/plan-200" target="_blank" class="plan-btn">
+                        ADQUIRIR AHORA
+                    </a>
+                </div>
+
+                <!-- PLAN $500 - MÁS RECOMENDADO -->
+                <div class="plan-card fade-in">
+                    <div class="plan-badge most-recommended">MÁS RECOMENDADO</div>
+                    <div class="plan-title">Plan Pro</div>
+                    <div class="plan-price">$500</div>
+                    <div class="plan-price-period">Pago único</div>
+                    <ul class="plan-features">
+                        <li>Todo del plan básico</li>
+                        <li>Mentoría personalizada</li>
+                        <li>Acceso a comunidad VIP</li>
+                        <li>Dashboard avanzado</li>
+                        <li>Soporte 24/7</li>
+                        <li>Sesiones 1 a 1</li>
+                        <li>Certificación incluida</li>
+                    </ul>
+                    <!-- REEMPLAZAR CON TU PASARELA DE PAGO $500 -->
+                    <a href="https://checkout.stripe.com/plan-500" target="_blank" class="plan-btn">
+                        ADQUIRIR AHORA
+                    </a>
+                </div>
+
+                <!-- PLAN $2000 - ELITE -->
+                <div class="plan-card fade-in">
+                    <div class="plan-title">Plan Elite</div>
+                    <div class="plan-price">$2000</div>
+                    <div class="plan-price-period">Pago único</div>
+                    <ul class="plan-features">
+                        <li>Todo del plan pro</li>
+                        <li>Acompañamiento total</li>
+                        <li>Landing page personalizada</li>
+                        <li>Videos promocionales</li>
+                        <li>Marketing automatizado</li>
+                        <li>Soporte técnico completo</li>
+                        <li>Garantía de resultados</li>
+                        <li>Acceso de por vida</li>
+                    </ul>
+                    <!-- REEMPLAZAR CON TU PASARELA DE PAGO $2000 -->
+                    <a href="https://checkout.stripe.com/plan-2000" target="_blank" class="plan-btn">
+                        ADQUIRIR AHORA
+                    </a>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <h2 class="section-title fade-in">Preguntas Frecuentes</h2>
             <div class="section-subtitle fade-in">
