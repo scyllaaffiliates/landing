@@ -1,0 +1,2148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scylla Affiliates - Gana hasta $400 por cada persona inscrita</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a1a;
+            color: white;
+            overflow-x: hidden;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* OVERLAY ADICIONAL PARA PROFUNDIDAD */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(22, 163, 74, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(34, 197, 94, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+            animation: breathe 8s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 40px 0;
+            background: rgba(26, 26, 26, 0.3);
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #22c55e, #16a34a, #15803d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite alternate;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: #fbbf24;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        @keyframes glow {
+            from { filter: brightness(1); }
+            to { filter: brightness(1.2); }
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* Video Section */
+        .video-section {
+            margin: 50px 0;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            backdrop-filter: blur(15px);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video-placeholder {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+            border-radius: 15px;
+            border: 2px solid rgba(34, 197, 94, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .video-placeholder:hover {
+            border-color: rgba(34, 197, 94, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(34, 197, 94, 0.2);
+        }
+
+        .video-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(34, 197, 94, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+            border-radius: 13px;
+            z-index: 1;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .play-button {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 3;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px rgba(34, 197, 94, 0.4);
+        }
+
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 30px solid white;
+            border-top: 18px solid transparent;
+            border-bottom: 18px solid transparent;
+            margin-left: 8px;
+        }
+
+        .video-info {
+            text-align: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .video-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #22c55e;
+            margin-bottom: 10px;
+        }
+
+        .video-description {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .video-suggestion {
+            font-size: 0.9rem;
+            opacity: 0.6;
+            font-style: italic;
+            color: #fbbf24;
+            background: rgba(251, 191, 36, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            border-color: rgba(34, 197, 94, 0.5);
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.2);
+        }
+
+        .process-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            animation: pulse-icon 3s infinite;
+        }
+
+        @keyframes pulse-icon {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .process-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #22c55e;
+        }
+
+        .process-description {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(34, 197, 94, 0.3) 25%, 
+                rgba(34, 197, 94, 0.8) 50%, 
+                rgba(34, 197, 94, 0.3) 75%, 
+                transparent 100%);
+            margin: 100px 0;
+            position: relative;
+        }
+
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 15px;
+            height: 15px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+            position: relative;
+            background: rgba(26, 26, 26, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 60px;
+            opacity: 0.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(34, 197, 94, 0.4);
+        }
+
+        .btn-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Story Section */
+        .story-section {
+            background: rgba(15, 15, 15, 0.6);
+            position: relative;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .story-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #22c55e;
+            font-weight: 600;
+        }
+
+        .story-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .story-text:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        /* Results Section */
+        .results-section {
+            background: rgba(34, 197, 94, 0.05);
+        }
+
+        /* GRID DE RESULTADOS - 6 IMÁGENES */
+        .results-gallery {
+            max-width: 1000px;
+            margin: 50px auto;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .results-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #22c55e;
+            font-size: 1.6rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .result-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .result-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(34, 197, 94, 0.3);
+        }
+
+        .result-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid rgba(34, 197, 94, 0.4);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.2);
+        }
+
+        .result-image:hover {
+            transform: scale(1.05);
+            border-color: rgba(34, 197, 94, 0.7);
+            box-shadow: 0 12px 35px rgba(34, 197, 94, 0.4);
+        }
+
+        /* Tabla Antes vs Después */
+        .comparison-section {
+            background: rgba(15, 15, 15, 0.6);
+        }
+
+        .comparison-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .before-column, .after-column {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(15px);
+            position: relative;
+        }
+
+        .before-column {
+            border: 2px solid rgba(220, 38, 38, 0.4);
+        }
+
+        .after-column {
+            border: 2px solid rgba(34, 197, 94, 0.4);
+        }
+
+        .comparison-header {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .before-column .comparison-header {
+            color: #dc2626;
+        }
+
+        .after-column .comparison-header {
+            color: #22c55e;
+        }
+
+        .comparison-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .before-column .comparison-item {
+            background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+        }
+
+        .after-column .comparison-item {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .comparison-item:hover {
+            transform: translateX(5px);
+        }
+
+        .comparison-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .comparison-text {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        /* Sección de Planes */
+        .plans-section {
+            background: rgba(34, 197, 94, 0.05);
+        }
+
+        .free-plan-container {
+            max-width: 400px;
+            margin: 0 auto 60px;
+        }
+
+        .paid-plans-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .plan-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: visible;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            min-height: 600px;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(34, 197, 94, 0.6);
+            box-shadow: 0 20px 40px rgba(34, 197, 94, 0.2);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .most-sold {
+            background: linear-gradient(45deg, #fbbf24, #f59e0b);
+            color: #000;
+        }
+
+        .most-recommended {
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+        }
+        
+        .most-profesional {
+            background: linear-gradient(90deg,rgba(255, 0, 0, 1) 0%, rgba(237, 86, 83, 1) 100%);
+        }
+
+        .plan-title {
+            font-size: 1.8rem;
+            color: #22c55e;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+
+        .plan-price-period {
+            font-size: 1rem;
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .plan-features li {
+            padding: 10px 0;
+            font-size: 1rem;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-align: left;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            color: #22c55e;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .plan-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: auto;
+        }
+
+        .plan-btn:hover {
+            background: linear-gradient(45deg, #16a34a, #15803d);
+            transform: translateY(-2px);
+        }
+
+        .plan-divider {
+            text-align: center;
+            margin: 60px 0 40px;
+            position: relative;
+        }
+
+        .plan-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.3), transparent);
+        }
+
+        .plan-divider-text {
+            background: #1a1a1a;
+            padding: 0 30px;
+            color: #22c55e;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Comisiones actualizadas */
+        .commission-section {
+            background: radial-gradient(circle at 30% 70%, rgba(34, 197, 94, 0.1) 0%, transparent 70%);
+        }
+
+        .commission-table {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            border-radius: 20px;
+            padding: 0;
+            backdrop-filter: blur(15px);
+            overflow: hidden;
+            margin: 0 auto 40px;
+            max-width: 800px;
+        }
+
+        .commission-header {
+            background: rgba(34, 197, 94, 0.1);
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            font-weight: bold;
+            border-bottom: 2px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .commission-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            border-bottom: 1px solid rgba(34, 197, 94, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .commission-row:hover {
+            background: rgba(34, 197, 94, 0.05);
+        }
+
+        .commission-row:last-child {
+            border-bottom: none;
+        }
+
+        .commission-tier {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .commission-amount {
+            font-size: 1.3rem;
+            color: #fbbf24;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: rgba(34, 197, 94, 0.05);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            border-radius: 15px;
+            margin-bottom: 15px;
+            backdrop-filter: blur(15px);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(34, 197, 94, 0.5);
+        }
+
+        .faq-item.active {
+            border-color: rgba(34, 197, 94, 0.6);
+        }
+
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(34, 197, 94, 0.1);
+        }
+
+        .faq-answer {
+            padding: 0 25px 25px;
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: #22c55e;
+            transition: transform 0.3s ease;
+            font-weight: bold;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: rgba(15, 15, 15, 0.6);
+        }
+
+        .contact-form-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .contact-form-wrapper,
+        .contact-info-wrapper {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(15px);
+        }
+
+        .contact-form-wrapper h3,
+        .contact-info-wrapper h3 {
+            color: #22c55e;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #22c55e;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            border: 2px solid rgba(34, 197, 94, 0.5);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.3);
+            background: linear-gradient(45deg, #16a34a, #15803d);
+        }
+
+        .form-group select option {
+            background: #22c55e;
+            color: white;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-form-btn {
+            width: 100%;
+            padding: 18px;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .contact-info-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-direct-options {
+            flex: 1;
+            margin-bottom: 30px;
+        }
+
+        .contact-option {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+
+        .contact-option:hover {
+            transform: translateY(-3px);
+            border-color: rgba(34, 197, 94, 0.6);
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.2);
+        }
+
+        .whatsapp-btn:hover {
+            background: rgba(37, 211, 102, 0.1);
+        }
+
+        .email-btn:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .contact-option-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-option-text h4 {
+            color: #22c55e;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .contact-option-text p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .contact-guarantee {
+            background: rgba(34, 197, 94, 0.1);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .contact-guarantee h4 {
+            color: #22c55e;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .contact-guarantee p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(20, 20, 20, 0.9);
+            padding: 60px 0 40px;
+            border-top: 2px solid rgba(34, 197, 94, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #22c55e;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #16a34a;
+            text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+        }
+
+        .footer-disclaimer {
+            font-size: 0.9rem;
+            opacity: 0.6;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        /* Icon Placeholder Styles */
+        .icon-placeholder {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid rgba(34, 197, 94, 0.5);
+            border-radius: 4px;
+            margin-right: 8px;
+            position: relative;
+            vertical-align: middle;
+        }
+
+        .icon-placeholder::after {
+            content: attr(data-icon);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+            color: #22c55e;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .paid-plans-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .paid-plans-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .result-image {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .video-placeholder {
+                height: 250px;
+            }
+
+            .comparison-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .paid-plans-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .plan-card {
+                padding: 30px 20px;
+                min-height: auto;
+            }
+
+            .plan-price {
+                font-size: 2.5rem;
+            }
+
+            .commission-header,
+            .commission-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .commission-amount {
+                text-align: center;
+            }
+
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .result-image {
+                height: 200px;
+            }
+            
+            .results-gallery {
+                padding: 30px 20px;
+                margin: 20px 10px;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideInLeft 0.8s ease forwards;
+        }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            animation: slideInRight 0.8s ease forwards;
+        }
+
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Gana hasta $400 por cada persona inscrita</h1>
+                <h2>Empieza a generar ingresos en dólares refiriendo amigos</h2>
+                
+                <div class="hero-description">
+                    Ellos depositan en la plataforma y <strong>tú ganas desde $50 hasta $400 por cada registro</strong>. 
+                    Sistema 100% legal con broker regulado internacionalmente.
+                </div>
+
+                <!-- Video Placeholder -->
+                <div class="video-section fade-in">
+                    <div class="video-placeholder" onclick="playVideo()">
+                        <div class="play-button"></div>
+                        <div class="video-info">
+                            <div class="video-title">
+                                <span class="icon-placeholder" data-icon="🎯"></span>
+                                REEMPLAZAR CON TU VIDEO
+                            </div>
+                            <div class="video-description">
+                                Aquí va tu video explicativo del sistema (recomendado: 5-10 minutos)
+                            </div>
+                            <div class="video-suggestion">
+                                <span class="icon-placeholder" data-icon="💡"></span>
+                                <strong>Click para cambiar:</strong> Sube tu video a YouTube y reemplaza el onclick por el iframe
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Process Steps -->
+                <div class="process-steps">
+                    <div class="process-step fade-in">
+                        <div class="process-icon">📤</div>
+                        <div class="process-title">1. Comparte</div>
+                        <div class="process-description">
+                            Comparte tu enlace de afiliado con amigos y contactos
+                        </div>
+                    </div>
+                    <div class="process-step fade-in">
+                        <div class="process-icon">👥</div>
+                        <div class="process-title">2. Invita</div>
+                        <div class="process-description">
+                            Ellos se registran y realizan su depósito inicial
+                        </div>
+                    </div>
+                    <div class="process-step fade-in">
+                        <div class="process-icon">💰</div>
+                        <div class="process-title">3. Gana</div>
+                        <div class="process-description">
+                            Recibes tu comisión directo a tu cuenta
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- BOTÓN DE PAGO - REEMPLAZA EL ENLACE CON TU PASARELA -->
+                <a href="https://checkout.stripe.com/pay/tu-enlace-de-pago" target="_blank" class="btn">
+                    <span class="btn-icon">🚀</span>
+                    CAMBIAR MI VIDA AHORA
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="content-section story-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Mi Historia de Transformación</h2>
+            <div class="section-subtitle fade-in">
+                De fracaso total a generar más de $10,000 dólares mensuales
+            </div>
+
+            <div class="story-grid">
+                <div class="story-content slide-in-left">
+                    <h3>
+                        <span class="icon-placeholder" data-icon="⚠️"></span>
+                        Antes era un fracaso
+                    </h3>
+                    
+                    <div class="story-text">
+                        Antes <span class="highlight">no tenía disciplina</span>. Vivía lleno de vicios, sin pensar en el mañana, solo en el placer momentáneo del hoy.
+                    </div>
+                    
+                    <div class="story-text">
+                        El tiempo pasaba rápido mientras yo me rodeaba de personas que solo alimentaban <span class="highlight">mis malos hábitos</span>. Era perezoso, desordenado... me levantaba a las 12 del mediodía y <span class="highlight">desperdiciaba mis días</span>.
+                    </div>
+                    
+                    <div class="story-text">
+                        Tuve un <span class="highlight">gran amigo</span> que intentó ayudarme con este modelo de trabajo y me aconsejó dejar esos hábitos, pero no le hice caso. Incluso llegué a <span class="highlight">llamarlo estafador</span>.
+                    </div>
+                    
+                    <div class="story-text">
+                        Con el tiempo, él desapareció de mi vida por un año. Cuando lo volví a ver, estaba <span class="highlight">irreconocible</span>: se bajó de un BMW M4 y me saludó como si nada.
+                    </div>
+                    
+                    <div class="story-text">
+                        En ese momento no sentí envidia, sentí <span class="highlight">frustración</span>... porque entendí que yo también pude haber estado ahí si hubiera <span class="highlight">tomado acción</span>.
+                    </div>
+                    
+                    <div class="story-text">
+                        Él me dio una segunda oportunidad. Y esta vez, al ver sus resultados, decidí escuchar, motivarme y <span class="highlight">cambiar mi vida</span>. Hoy puedo decir que tomar esa decisión fue <span class="highlight">lo mejor que hice</span>.
+                    </div>
+                </div>
+                
+                <div class="slide-in-right" style="display: flex; justify-content: center; align-items: center;">
+                    <img src="fracasos.png" alt="Imagen4" style="max-width: 100%; height: auto; display: block;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="content-section results-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Mis Resultados Reales</h2>
+            <div class="section-subtitle fade-in">
+                Ahora gano más de $10,000 dólares mensuales con este sistema
+            </div>
+
+            <!-- GRID DE 6 IMÁGENES -->
+            <div class="results-gallery">
+                <div class="results-title">
+                    <span class="icon-placeholder" data-icon="💰"></span>
+                    Mis Resultados Reales en Ganancias
+                </div>
+                
+                <div class="results-grid">
+                    <div class="result-item fade-in">
+                        <img src="ganancias1.jpeg" alt="Ganancia 1" class="result-image">
+                    </div>
+                    <div class="result-item fade-in">
+                        <img src="ganancias2.jpeg" alt="Ganancia 2" class="result-image">
+                    </div>
+                    <div class="result-item fade-in">
+                        <img src="ganancias3.jpeg" alt="Ganancia 3" class="result-image">
+                    </div>
+                    <div class="result-item fade-in">
+                        <img src="ganancias4.jpeg" alt="Ganancia 4" class="result-image">
+                    </div>
+                    <div class="result-item fade-in">
+                        <img src="ganancias5.jpeg" alt="Ganancia 5" class="result-image">
+                    </div>
+                    <div class="result-item fade-in">
+                        <img src="ganancias6.jpeg" alt="Ganancia 6" class="result-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="content-section comparison-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Mi Transformación Real</h2>
+            <div class="section-subtitle fade-in">
+                Antes vs Después - La diferencia de tomar acción
+            </div>
+
+            <div class="comparison-container">
+                <div class="before-column slide-in-left">
+                    <div class="comparison-header">
+                        <span>❌</span>
+                        ANTES - Era un fracaso
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">😴</div>
+                        <div class="comparison-text">Me levantaba a las 12 del mediodía sin propósito</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">🍺</div>
+                        <div class="comparison-text">Vivía lleno de vicios y malos hábitos</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">📱</div>
+                        <div class="comparison-text">Perdía horas en redes sociales sin productividad</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">💸</div>
+                        <div class="comparison-text">Gastaba dinero en cosas innecesarias</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">😞</div>
+                        <div class="comparison-text">No tenía metas claras ni visión de futuro</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">🏠</div>
+                        <div class="comparison-text">Era desordenado y perezoso en todo</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">🚫</div>
+                        <div class="comparison-text">Rechazaba oportunidades por miedo al cambio</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">👥</div>
+                        <div class="comparison-text">Me rodeaba de personas con mentalidad limitada</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">📉</div>
+                        <div class="comparison-text">Ingresos bajos e inestables</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">😡</div>
+                        <div class="comparison-text">Culpaba a otros de mi falta de éxito</div>
+                    </div>
+                </div>
+
+                <div class="after-column slide-in-right">
+                    <div class="comparison-header">
+                        <span>✅</span>
+                        AHORA - Soy exitoso
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">⏰</div>
+                        <div class="comparison-text">Me levanto temprano con energía y propósito</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">💪</div>
+                        <div class="comparison-text">Vivo disciplinado y enfocado en mis metas</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">📚</div>
+                        <div class="comparison-text">Invierto tiempo en aprender y crecer constantemente</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">💰</div>
+                        <div class="comparison-text">Genero más de $10,000 USD mensuales</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">🎯</div>
+                        <div class="comparison-text">Tengo objetivos claros y los cumplo sistemáticamente</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">🏆</div>
+                        <div class="comparison-text">Soy organizado y eficiente en todo lo que hago</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">🚀</div>
+                        <div class="comparison-text">Abrazo oportunidades y tomo riesgos calculados</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">👑</div>
+                        <div class="comparison-text">Me rodeo de personas exitosas y mentores</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">📈</div>
+                        <div class="comparison-text">Ingresos escalables y múltiples fuentes de ingreso</div>
+                    </div>
+                    
+                    <div class="comparison-item">
+                        <div class="comparison-icon">🔥</div>
+                        <div class="comparison-text">Asumo responsabilidad total de mi éxito</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="content-section plans-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Nuestros Planes</h2>
+            <div class="section-subtitle fade-in">
+                Elige el plan que mejor se adapte a tu presupuesto y objetivos
+            </div>
+
+            <!-- PLAN GRATIS SEPARADO -->
+            <div class="free-plan-container">
+                <div class="plan-card fade-in">
+                    <div class="plan-title">Plan Gratis</div>
+                    <div class="plan-price">$0</div>
+                    <div class="plan-price-period">Sin costo inicial</div>
+                    <ul class="plan-features">
+                        <li>Acceso básico al sistema</li>
+                        <li>Comisiones del 30% por venta</li>
+                        <li>Soporte por email</li>
+                        <li>Manual básico incluido</li>
+                        <li>Sin límite de referidos</li>
+                        <li>Empieza inmediatamente</li>
+                    </ul>
+                    <!-- REEMPLAZAR CON TU ENLACE DE REGISTRO GRATIS -->
+                    <a href="https://checkout.stripe.com/gratis" target="_blank" class="plan-btn">
+                        COMENZAR GRATIS
+                    </a>
+                </div>
+            </div>
+
+            <!-- DIVISOR -->
+            <div class="plan-divider">
+                <div style="color: #16a34a; font-weight: bold; text-align: center; font-size: 2rem; letter-spacing: 1px;">
+                    PLANES PREMIUM
+                </div>
+            </div>
+
+            <!-- PLANES DE PAGO EN GRID -->
+            <div class="paid-plans-grid">
+                <!-- PLAN $200 - MÁS VENDIDO -->
+                <div class="plan-card fade-in">
+                    <div class="plan-badge most-sold">MÁS VENDIDO</div>
+                    <div class="plan-title">Plan Básico</div>
+                    <div class="plan-price">$200</div>
+                    <div class="plan-price-period">Pago único</div>
+                    <ul class="plan-features">
+                        <li>Todo del plan gratis</li>
+                        <li>Herramientas profesionales</li>
+                        <li>Soporte prioritario</li>
+                        <li>Guías avanzadas</li>
+                        <li>Webinars exclusivos</li>
+                        <li>Plantillas de marketing</li>
+                        <li>Acceso a grupo privado</li>
+                    </ul>
+                    <!-- REEMPLAZAR CON TU PASARELA DE PAGO $200 -->
+                    <a href="https://checkout.stripe.com/plan-200" target="_blank" class="plan-btn">
+                        ADQUIRIR AHORA
+                    </a>
+                </div>
+
+                <!-- PLAN $500 - MÁS RECOMENDADO -->
+                <div class="plan-card fade-in">
+                    <div class="plan-badge most-recommended">MÁS RECOMENDADO</div>
+                    <div class="plan-title">Plan Pro</div>
+                    <div class="plan-price">$500</div>
+                    <div class="plan-price-period">Pago único</div>
+                    <ul class="plan-features">
+                        <li>Todo del plan básico</li>
+                        <li>Mentoría personalizada</li>
+                        <li>Acceso a comunidad VIP</li>
+                        <li>Dashboard avanzado</li>
+                        <li>Soporte 24/7</li>
+                        <li>Sesiones 1 a 1</li>
+                        <li>Certificación incluida</li>
+                    </ul>
+                    <!-- REEMPLAZAR CON TU PASARELA DE PAGO $500 -->
+                    <a href="https://checkout.stripe.com/plan-500" target="_blank" class="plan-btn">
+                        ADQUIRIR AHORA
+                    </a>
+                </div>
+
+                <!-- PLAN $2000 - ELITE -->
+                <div class="plan-card fade-in">
+                    <div class="plan-badge most-profesional">MÁS PROFESIONAL</div>
+                    <div class="plan-title">Plan Elite</div>
+                    <div class="plan-price">$2000</div>
+                    <div class="plan-price-period">Pago único</div>
+                    <ul class="plan-features">
+                        <li>Todo del plan pro</li>
+                        <li>Acompañamiento total</li>
+                        <li>Landing page personalizada</li>
+                        <li>Videos promocionales</li>
+                        <li>Marketing automatizado</li>
+                        <li>Soporte técnico completo</li>
+                        <li>Garantía de resultados</li>
+                        <li>Acceso de por vida</li>
+                    </ul>
+                    <!-- REEMPLAZAR CON TU PASARELA DE PAGO $2000 -->
+                    <a href="https://checkout.stripe.com/plan-2000" target="_blank" class="plan-btn">
+                        ADQUIRIR AHORA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="content-section commission-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Estructura de Comisiones</h2>
+            <div class="section-subtitle fade-in">
+                Gana más dinero mientras más depósitos generes - Sin límites
+            </div>
+
+            <div class="commission-table fade-in">
+                <div class="commission-header">
+                    <div>
+                        <span class="icon-placeholder" data-icon="💰"></span>
+                        Monto Depositado por Referido
+                    </div>
+                    <div>
+                        <span class="icon-placeholder" data-icon="💸"></span>
+                        Tu Comisión
+                    </div>
+                </div>
+                
+                <div class="commission-row">
+                    <div class="commission-tier">
+                        <span class="icon-placeholder" data-icon="🥉"></span>
+                        De $1 a $49 depositados
+                    </div>
+                    <div class="commission-amount">$50</div>
+                </div>
+                
+                <div class="commission-row">
+                    <div class="commission-tier">
+                        <span class="icon-placeholder" data-icon="🥈"></span>
+                        De $50 a $149 depositados
+                    </div>
+                    <div class="commission-amount">$100</div>
+                </div>
+                
+                <div class="commission-row">
+                    <div class="commission-tier">
+                        <span class="icon-placeholder" data-icon="🥇"></span>
+                        De $150 a $249 depositados
+                    </div>
+                    <div class="commission-amount">$150</div>
+                </div>
+                
+                <div class="commission-row">
+                    <div class="commission-tier">
+                        <span class="icon-placeholder" data-icon="💎"></span>
+                        De $250 a $499 depositados
+                    </div>
+                    <div class="commission-amount">$300</div>
+                </div>
+                
+                <div class="commission-row">
+                    <div class="commission-tier">
+                        <span class="icon-placeholder" data-icon="👑"></span>
+                        $500+ depositados
+                    </div>
+                    <div class="commission-amount">$400</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <div style="background: rgba(34, 197, 94, 0.1); border: 2px solid rgba(34, 197, 94, 0.3); border-radius: 15px; padding: 30px; max-width: 600px; margin: 0 auto;">
+                    <h3 style="color: #22c55e; margin-bottom: 15px;">
+                        <span class="icon-placeholder" data-icon="🎯"></span>
+                        Ejemplo de Ganancias
+                    </h3>
+                    <p style="font-size: 1.1rem; opacity: 0.9;">
+                        Si refieres 10 personas que depositan $500 cada una, ganarás <strong style="color: #fbbf24;">$400 × 10 = $4,000 USD</strong> en comisiones totales.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="content-section faq-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Preguntas Frecuentes</h2>
+            <div class="section-subtitle fade-in">
+                Resolvemos las dudas más comunes para que puedas tomar una decisión informada
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>
+                            <span class="icon-placeholder" data-icon="❓"></span>
+                            ¿De qué se trata exactamente?
+                        </span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Se trata de un programa de afiliados donde puedes generar ingresos en dólares por cada persona que refieras a nuestra plataforma de inversión. Es completamente legal y transparente, trabajamos con un broker regulado internacionalmente.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>
+                            <span class="icon-placeholder" data-icon="⚠️"></span>
+                            ¿Es una pirámide?
+                        </span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        No, definitivamente no es una pirámide. Es un programa de afiliados legítimo donde las comisiones se basan en servicios reales y depósitos genuinos en una plataforma regulada. No hay niveles complejos ni esquemas insostenibles.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>
+                            <span class="icon-placeholder" data-icon="🎯"></span>
+                            ¿Qué necesito para empezar?
+                        </span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Solo necesitas ganas de trabajar, disciplina y constancia. No requieres experiencia previa, productos propios, ni inversión inicial si eliges la opción gratuita. Te proporcionamos toda la capacitación necesaria.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>
+                            <span class="icon-placeholder" data-icon="💰"></span>
+                            ¿Cuánto puedo ganar?
+                        </span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Puedes ganar desde $50 hasta $400 por cada persona que invites, dependiendo del monto que depositen. No hay límite en la cantidad de referidos que puedes tener.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>
+                            <span class="icon-placeholder" data-icon="💳"></span>
+                            ¿Tengo que invertir dinero?
+                        </span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        No necesariamente. Tenemos la opción completamente gratuita donde puedes empezar a generar comisiones sin invertir nada. Solo necesitas referir personas y generar ventas.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>
+                            <span class="icon-placeholder" data-icon="⏰"></span>
+                            ¿Cuánto tiempo me toma ver resultados?
+                        </span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Los resultados dependen de tu dedicación y constancia. Algunos estudiantes han generado sus primeras comisiones en la primera semana, otros en el primer mes. La clave es seguir el sistema y mantener la disciplina.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>
+                            <span class="icon-placeholder" data-icon="📄"></span>
+                            ¿Hay algún contrato de permanencia?
+                        </span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        No hay contratos de permanencia. Puedes dejar de participar en cualquier momento sin penalizaciones ni compromisos adicionales. Tu libertad es importante para nosotros.
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>
+                            <span class="icon-placeholder" data-icon="🤔"></span>
+                            ¿Por qué enseñar esto si ya te va bien?
+                        </span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Porque queremos crear una red sólida de afiliados exitosos. Mientras más personas generen ingresos con nuestro sistema, más crece nuestra comunidad y mejores resultados obtenemos todos. Es una situación win-win.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="content-section contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">¿Listo para Cambiar tu Vida?</h2>
+            <div class="section-subtitle fade-in">
+                Completa el formulario y te contactaremos para comenzar tu transformación financiera
+            </div>
+
+            <div class="contact-form-container">
+                <div class="contact-form-wrapper slide-in-left">
+                    <h3>
+                        <span class="icon-placeholder" data-icon="📋"></span>
+                        Solicita Tu Acceso Ahora
+                    </h3>
+                    
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mjkokykz" method="POST">
+                        <div class="form-group">
+                            <label for="fullName">
+                                <span class="icon-placeholder" data-icon="👤"></span>
+                                Nombre Completo *
+                            </label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Tu nombre completo">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">
+                                <span class="icon-placeholder" data-icon="📧"></span>
+                                Correo Electrónico *
+                            </label>
+                            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">
+                                <span class="icon-placeholder" data-icon="📱"></span>
+                                Teléfono / WhatsApp *
+                            </label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+57 300 123 4567">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="country">
+                                <span class="icon-placeholder" data-icon="🌍"></span>
+                                País *
+                            </label>
+                            <select id="country" name="country" required>
+                                <option value="">Selecciona tu país</option>
+                                <option value="CO">Colombia</option>
+                                <option value="MX">México</option>
+                                <option value="PE">Perú</option>
+                                <option value="AR">Argentina</option>
+                                <option value="CL">Chile</option>
+                                <option value="EC">Ecuador</option>
+                                <option value="VE">Venezuela</option>
+                                <option value="BO">Bolivia</option>
+                                <option value="UY">Uruguay</option>
+                                <option value="PY">Paraguay</option>
+                                <option value="OTHER">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="experience">
+                                <span class="icon-placeholder" data-icon="💼"></span>
+                                Experiencia Previa
+                            </label>
+                            <select id="experience" name="experience">
+                                <option value="">Selecciona tu experiencia</option>
+                                <option value="ninguna">Ninguna experiencia</option>
+                                <option value="basica">Conocimientos básicos</option>
+                                <option value="intermedia">Experiencia intermedia</option>
+                                <option value="avanzada">Experiencia avanzada</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="investment">
+                                <span class="icon-placeholder" data-icon="💰"></span>
+                                ¿Qué opción te interesa más?
+                            </label>
+                            <select id="investment" name="investment">
+                                <option value="">Selecciona una opción</option>
+                                <option value="gratis">Comenzar gratis (sin inversión)</option>
+                                <option value="herramientas">Herramientas y sistema ($200-$500)</option>
+                                <option value="inversion">Inversión directa ($500+)</option>
+                                <option value="todo">Me interesa conocer todas las opciones</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">
+                                <span class="icon-placeholder" data-icon="💬"></span>
+                                Mensaje (Opcional)
+                            </label>
+                            <textarea id="message" name="message" rows="4" placeholder="Cuéntanos sobre tu situación actual o preguntas específicas..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn contact-form-btn">
+                            <span class="btn-icon">📨</span>
+                            ENVIAR SOLICITUD
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="contact-info-wrapper slide-in-right">
+                    <div class="contact-info-card">
+                        <h3>
+                            <span class="icon-placeholder" data-icon="🚀"></span>
+                            También Puedes Contactarnos Directamente
+                        </h3>
+                        
+                        <div class="contact-direct-options">
+                            <a href="https://wa.link/6xy2y0" 
+                               class="contact-option whatsapp-btn" target="_blank">
+                                <div class="contact-option-icon">📱</div>
+                                <div class="contact-option-text">
+                                    <h4>WhatsApp Directo</h4>
+                                    <p>Respuesta inmediata</p>
+                                </div>
+                            </a>
+                            
+                            <a href="mailto:scylla-affiliates@hotmail.com?subject=Solicitud%20de%20Información" 
+                               class="contact-option email-btn">
+                                <div class="contact-option-icon">📧</div>
+                                <div class="contact-option-text">
+                                    <h4>Email</h4>
+                                    <p>scylla-affiliates@hotmail.com</p>
+                                </div>
+                            </a>
+                            
+                            <div class="contact-option">
+                                <div class="contact-option-icon">⏰</div>
+                                <div class="contact-option-text">
+                                    <h4>Horario de Atención</h4>
+                                    <p>Lunes a Domingo: 5:30 AM - 9:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-guarantee">
+                            <h4>
+                                <span class="icon-placeholder" data-icon="✅"></span>
+                                Garantía de Respuesta
+                            </h4>
+                            <p>Te contactaremos dentro de las próximas 2 horas para resolver todas tus dudas y comenzar tu proceso de transformación.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 1.5rem; color: #22c55e; margin-bottom: 20px;">
+                    <span class="icon-placeholder" data-icon="💰"></span>
+                    <strong>Scylla Affiliates</strong>
+                </div>
+                <p>Transformando vidas a través del marketing de afiliados desde 2019</p>
+                <p>Más de 1,000 afiliados exitosos generando ingresos en dólares</p>
+                
+                <div class="footer-links">
+                    <a href="#">Términos y Condiciones</a>
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Soporte</a>
+                    <a href="#">Preguntas Frecuentes</a>
+                </div>
+                
+                <div class="footer-disclaimer">
+                    <p>
+                        <span class="icon-placeholder" data-icon="⚠️"></span>
+                        <strong>Advertencia:</strong> Los resultados pueden variar según el esfuerzo y dedicación individual. El marketing de afiliados requiere trabajo constante y disciplina. No garantizamos ganancias específicas.
+                    </p>
+                    <p style="margin-top: 15px;">
+                        © 2025 Scylla Affiliates. Todos los derechos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Video placeholder functionality
+        function playVideo() {
+            alert('🎬 REEMPLAZAR ESTE CÓDIGO\n\n💡 Instrucciones:\n1. Sube tu video a YouTube\n2. Obtén el código embed\n3. Reemplaza todo el div "video-placeholder" con:\n\n<iframe width="100%" height="400" src="https://www.youtube.com/embed/TU_VIDEO_ID" frameborder="0" allowfullscreen style="border-radius: 15px;"></iframe>');
+        }
+
+        // FAQ Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('.faq-icon');
+                
+                // Cerrar todos los otros FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-answer').style.display = 'none';
+                        item.querySelector('.faq-icon').textContent = '+';
+                    }
+                });
+                
+                // Toggle el FAQ actual
+                if (faqItem.classList.contains('active')) {
+                    faqItem.classList.remove('active');
+                    answer.style.display = 'none';
+                    icon.textContent = '+';
+                } else {
+                    faqItem.classList.add('active');
+                    answer.style.display = 'block';
+                    icon.textContent = '−';
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            
+            // Submit to Formspree (email)
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Show success message
+                    showSuccessMessage();
+                    this.reset();
+                } else {
+                    alert('Hubo un problema al enviar el formulario. Por favor, intenta de nuevo.');
+                }
+            }).catch(error => {
+                alert('Error al enviar el formulario. Por favor, intenta de nuevo.');
+            });
+        });
+
+        function showSuccessMessage() {
+            const successDiv = document.createElement('div');
+            successDiv.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: linear-gradient(45deg, #22c55e, #16a34a);
+                    color: white;
+                    padding: 30px;
+                    border-radius: 15px;
+                    box-shadow: 0 20px 40px rgba(34, 197, 94, 0.3);
+                    z-index: 10000;
+                    text-align: center;
+                    max-width: 400px;
+                    width: 90%;
+                    backdrop-filter: blur(15px);
+                ">
+                    <div style="font-size: 3rem; margin-bottom: 15px;">✅</div>
+                    <h3 style="margin-bottom: 15px;">¡Mensaje enviado con éxito!</h3>
+                    <p style="margin-bottom: 20px;">Tu información ha sido enviada correctamente. Nos pondremos en contacto contigo muy pronto.</p>
+                    <button onclick="this.parentElement.parentElement.remove()" style="
+                        background: rgba(255, 255, 255, 0.2);
+                        border: none;
+                        color: white;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-weight: bold;
+                    ">Cerrar</button>
+                </div>
+            `;
+            document.body.appendChild(successDiv);
+
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (successDiv.parentElement) {
+                    successDiv.remove();
+                }
+            }, 5000);
+        }
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Enhanced Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Enhanced Button Effects
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s ease-out;
+                    pointer-events: none;
+                `;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+        
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
